@@ -1,9 +1,8 @@
 # plateforme-promotions-cc 
-
-
-## regle de données
-
 site de promotions et centres commerciaux avec espace membre
+
+
+## Règles de données
 
 un administrateur peut créer une ou plusieurs boutiques
 
@@ -15,6 +14,6 @@ un utilisateur non abonné/abonné peut voir et consulter la liste des boutiques
 
 un utilisateur non abonné/abonné peut voir et consulter la liste des coupons de réductions (et filtrer les résultats)
 
-un utilisateur abonné peut se connecter à son espace membre 
-
 un utilisateur abonné peut ajouter des favoris à son esapce membre
+
+un utilisateur abonné peut se connecter à son espace membre et accéder à ses coupons favoris
