@@ -4,7 +4,7 @@ get_header();
 
 ?>
 
-archive coupon
+<h2>archive boutique</h2>
 
 <?php
 

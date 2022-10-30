@@ -41,7 +41,7 @@ add_action('after_setup_theme','theme_supports');
 function mytheme_register_menus()
 {
     $locations = array(
-        'primary' => 'desktop top menu',
+        'primary' => 'top menu',
         'footer' => 'footer menu'
     );
 
@@ -54,7 +54,7 @@ add_action('init','mytheme_register_menus');
 function enqueue_styles()
 {
     // $version = wp_get_theme()->get('Version');
-    // wp_enqueue_style('tarik-font-awesome',get_template_directory_uri()."/assets/fontawesome/css/all.css",array(),'6.1.2','all');   
+    // wp_enqueue_style('font-awesome',get_template_directory_uri()."/assets/fontawesome/css/all.css",array(),'6.1.2','all');   
     wp_enqueue_style('main-css',get_template_directory_uri()."/style.css",array(),'1.0.0','all');
 }
 
@@ -86,9 +86,13 @@ add_action('init', 'montheme_register_coupons'); // Le hook init lance la foncti
 add_action('init', 'montheme_register_marchand');
 add_action('init', 'montheme_register_taxonomies');
 
+
 require_once(__DIR__.'/metaboxes/discount-value.php');
+require_once(__DIR__.'/metaboxes/associated-boutique.php');
+
 DiscountValue::register();
+AssociatedBoutique::register();
 
 
 // Remove p tags from category description
-remove_filter('the_content','wpautop');
+// remove_filter('the_content','wpautop');

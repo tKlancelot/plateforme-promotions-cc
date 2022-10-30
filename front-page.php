@@ -5,52 +5,28 @@ get_header();
 ?>
 
 <main id="front-page">
-    <aside>
-        <h2>listing des categories</h2>
-        <?php
-            $args = array(
-                'taxonomy' => 'category',
-                'orderby' => 'name', // term_id
-                "order" => "ASC",
-                'hide_empty' => 0,
-                'fields' => 'all',
-                'exclude' => 1,
-                'show_count'=> 1
-            );
-            $cats = wp_list_categories( $args );
-        ?>
 
-        <h2>listing des boutiques</h2>
-    </aside>
+    <?php include(__DIR__.'/parts/aside.php');?>
 
     <section>
-        <h2>custom post type :  coupons</h2>
+        <h2>listing des cards boutiques</h2>
 
         <?php
-            $coupons =  new WP_Query(array(
-                'post_per_page' => '4',
-                'post_type' => 'coupon'
+            $boutiques =  new WP_Query(array(
+                'post_per_page' => '16',
+                'post_type' => 'boutique'
             ));
 
-            while($coupons->have_posts()){
-                $coupons->the_post(); ?>
-                <?php $discountValue = get_post_meta(get_the_ID(),DiscountValue::META_KEY,true);?>
-                <ul>
-                    <li><?php the_title()?>
-                        <ul>
-                            <li><?php the_content();?> (apparaîtra au :hover)</li>
-                            <li><a href=<?php the_permalink()?>>voir le coupon (voir le magasin qui propose le coupon)</a></li>
-                            <li><?php echo $discountValue;?> %</li>
-                            <li><?php echo (get_the_category($coupons->ID)[0]->name)?></li>
-                            <!-- <li> -->
-                                <?php 
-                                // echo (get_the_terms($coupons->ID,'type-coupon')[0]->name)
-                                ?>
-                            <!-- </li> -->
-                            <li><?php echo get_the_date('l j F Y' );?></li>
-                        </ul>
-                    </li>
-                </ul>
+            while($boutiques->have_posts()){
+                $boutiques->the_post(); ?>
+                <div class="boutique-card">
+                    <ul>
+                        <li><?php the_title()?>
+                        <li><?php echo get_the_content() == '' ? 'description de la boutique : '. get_the_title() : the_content();?></li>
+                        <li><a href=<?php the_permalink()?>>voir la boutique (voir single de la boutique et tous les coupons qu'elle répertorie)</a></li>
+                        <li>horaires</li>
+                    </ul>
+                </div>
 
             <?php 
             }
@@ -78,3 +54,30 @@ get_footer();
     // }
     // echo '</ul>';	
 ?>
+
+<?php
+    // $coupons =  new WP_Query(array(
+    //     'post_per_page' => '16',
+    //     'post_type' => 'coupon'
+    // ));
+
+    // while($coupons->have_posts()){
+    //     $coupons->the_post(); 
+        ?>
+        <?php 
+        // $discountValue = get_post_meta(get_the_ID(),DiscountValue::META_KEY,true);
+        ?>
+        <!-- <ul>
+            <li><?php // the_title()?>
+                <ul>
+                    <li><?php //the_content();?> (apparaîtra au :hover)</li>
+                    <li><a href=<?php // the_permalink()?>>voir le coupon (voir le magasin qui propose le coupon)</a></li>
+                    <li><?php // echo $discountValue;?> %</li>
+                    <li><?php //echo get_the_date('l j F Y' );?></li>
+                </ul>
+            </li>
+        </ul> -->
+
+    <?php 
+    //}
+?> 
