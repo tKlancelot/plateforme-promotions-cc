@@ -30,7 +30,7 @@ function theme_supports()
     // ajouter le support de titres dynamiques
     add_theme_support('title-tag');
     add_theme_support('custom-logo');
-    add_theme_support( 'post-thumbnails', array( 'post', 'coupons' ) );
+    add_theme_support( 'post-thumbnails', array( 'post', 'promotions' ) );
 }
 
 
@@ -82,7 +82,7 @@ add_action('wp_enqueue_scripts','enqueue_scripts');
 
 include(__DIR__.'/includes/register-cpt.php');
 
-add_action('init', 'montheme_register_coupons'); // Le hook init lance la fonction
+add_action('init', 'montheme_register_promotions'); // Le hook init lance la fonction
 add_action('init', 'montheme_register_marchand');
 add_action('init', 'montheme_register_taxonomies');
 
@@ -196,4 +196,4 @@ function bidirectional_acf_update_value( $value, $post_id, $field  ) {
     
 }
 
-add_filter('acf/update_value/name=coupons_associes', 'bidirectional_acf_update_value', 10,3);
+add_filter('acf/update_value/name=promotions_associees', 'bidirectional_acf_update_value', 10,3);

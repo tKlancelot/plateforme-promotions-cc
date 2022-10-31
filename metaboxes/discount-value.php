@@ -11,7 +11,7 @@ class DiscountValue {
     } 
 
     public static function add(){
-        add_meta_box(self::META_KEY,'valeur de la remise',[self::class,'render'],'coupon','normal');
+        add_meta_box(self::META_KEY,'valeur de la remise',[self::class,'render'],'promotion','normal');
     } 
 
     public static function render($post){

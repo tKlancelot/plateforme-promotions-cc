@@ -9,8 +9,16 @@
         display: grid;
         grid-template-columns: 0.25fr 0.75fr;
         grid-gap: 1vw;
+
+        .boutique-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            place-content: center;
+            grid-gap: 1vw;
+        }
     }
-    &__header{
+
+    &__header {
         height: 4.8vw;
         @include flex-center;
     }

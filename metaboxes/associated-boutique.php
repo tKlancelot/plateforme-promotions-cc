@@ -3,7 +3,7 @@
 
 class AssociatedBoutique {
 
-    // relation entre boutique et coupons 
+    // relation entre boutique et promotions 
 
     const META_KEY = 'associated_boutique';
 
@@ -13,7 +13,7 @@ class AssociatedBoutique {
     } 
 
     public static function add(){
-        add_meta_box(self::META_KEY,'boutique associée',[self::class,'render'],'coupon','normal');
+        add_meta_box(self::META_KEY,'boutique associée',[self::class,'render'],'promotion','normal');
     } 
 
     public static function render($post){

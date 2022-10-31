@@ -12,8 +12,6 @@ header, footer {
   color: #fff;
   padding-left: 10vw;
   padding-right: 10vw;
-  display: flex;
-  align-items: center;
 }
 
 h2 {
@@ -21,17 +19,22 @@ h2 {
   font-size: 1.2vw;
 }
 
-header {
-  min-height: 10vw;
+.navbar ul hr {
+  border: unset;
+  height: 0px;
+  border-top: 1px solid rgba(158, 158, 158, 0.2823529412);
+  margin-block-start: 0.5rem;
+  margin-block-end: 0.5rem;
 }
 
-header a {
-  color: #847568;
-  text-decoration: none;
+ul, li {
+  list-style: none;
 }
 
 footer {
   min-height: 12.5vw;
+  display: flex;
+  align-items: center;
 }
 
 .main {
@@ -47,6 +50,12 @@ footer {
   grid-template-columns: 0.25fr 0.75fr;
   grid-gap: 1vw;
 }
+.main__body .boutique-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-content: center;
+  grid-gap: 1vw;
+}
 .main__header {
   height: 4.8vw;
   display: flex;
@@ -58,11 +67,42 @@ aside {
   padding: 2vw;
 }
 
+nav a {
+  color: #fefefe;
+  text-decoration: none;
+}
+
+.topbar {
+  border-bottom: 1px solid #847568;
+  min-height: 2.4vw;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+.topbar ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+.navbar {
+  min-height: 8vw;
+  background-color: darkslategrey;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar a img {
+  width: 10%;
+  height: auto;
+  margin: 1rem;
+}
+
 .boutique-card {
   border: 1px solid #e4e4e4;
   background-color: #fefefe;
   margin: auto 0;
-  height: 20vw;
+  height: 22vw;
 }
 .boutique-card__header {
   display: flex;

@@ -1,17 +1,17 @@
 <?php
 
     function montheme_register_taxonomies(){
-        register_taxonomy('type-coupon', ['coupon','post'], [
+        register_taxonomy('type-promotion', ['promotion','post'], [
             'labels' => [
-                'name' => 'type-coupon',
-                'singular_name'     => 'Type-coupon',
-                'search_items'      => 'Rechercher des types de coupons',
-                'all_items'         => 'Tous les types de coupons',
-                'edit_item'         => 'Editer le type de coupon',
-                'update_item'       => 'Mettre à jour le type de coupon',
-                'add_new_item'      => 'Ajouter un nouveau type de coupon',
-                'new_item_name'     => 'Ajouter un nouveau type de coupon',
-                'menu_name'         => 'Type de coupon',
+                'name' => 'type-promotion',
+                'singular_name'     => 'Type-promotion',
+                'search_items'      => 'Rechercher des types de promotions',
+                'all_items'         => 'Tous les types de promotions',
+                'edit_item'         => 'Editer le type de promotion',
+                'update_item'       => 'Mettre à jour le type de promotion',
+                'add_new_item'      => 'Ajouter un nouveau type de promotion',
+                'new_item_name'     => 'Ajouter un nouveau type de promotion',
+                'menu_name'         => 'Type de promotion',
             ],
             'show_in_rest' => true,
             'hierarchical' => true,
@@ -37,21 +37,21 @@
     }
 
 
-    function montheme_register_coupons() {
+    function montheme_register_promotions() {
 
         $args = [
-            'label' => 'Coupon',
+            'label' => 'Promotion',
             'labels' => array(
-                'name' => 'Coupons',
-                'singular_name' => 'Coupon',
-                'all_items' => 'Tous les coupons',
-                'add_new_item' => 'Ajouter un coupon',
-                'edit_item' => 'Éditer le coupon',
-                'new_item' => 'Nouveau coupon',
-                'view_item' => 'Voir le coupon',
-                'search_items' => 'Rechercher parmi les coupons',
-                'not_found' => 'Pas de coupon trouvé',
-                'not_found_in_trash'=> 'Pas de coupon dans la corbeille'
+                'name' => 'Promotions',
+                'singular_name' => 'Promotion',
+                'all_items' => 'Tous les promotions',
+                'add_new_item' => 'Ajouter un promotion',
+                'edit_item' => 'Éditer la promotion',
+                'new_item' => 'Nouvelle promotion',
+                'view_item' => 'Voir la promotion',
+                'search_items' => 'Rechercher parmi les promotions',
+                'not_found' => 'Pas de promotion trouvée',
+                'not_found_in_trash'=> 'Pas de promotion dans la corbeille'
             ),
             'public' => true,
             "publicly_queryable" => true,
@@ -61,7 +61,7 @@
             'has_archive' => true,
         ];
 
-        register_post_type('coupon',$args);
+        register_post_type('promotion',$args);
     }
 
 
@@ -90,7 +90,7 @@
         ];
 
         register_post_type('boutique',$args);
-        // register_taxonomy_for_object_type( 'type-coupon', 'coupon' );
+        // register_taxonomy_for_object_type( 'type-promotion', 'promotion' );
 
     }
 

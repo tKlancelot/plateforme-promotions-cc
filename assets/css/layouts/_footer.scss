@@ -1,3 +1,4 @@
 footer {
     min-height: 12.5vw;
+    @include flex-center;
 }

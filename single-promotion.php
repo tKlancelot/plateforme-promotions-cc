@@ -6,7 +6,7 @@ get_header();
 
 <main>
 
-    single des coupons
+    single des promotions
 
 </main>
 
