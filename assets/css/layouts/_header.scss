@@ -1,0 +1,12 @@
+  header{
+    background-color: #000;
+    min-height: 10vw;
+    color:#fff;
+    @include main-padding;
+    @include flex-center;
+  }
+
+
+  header a{
+    color:orange;
+  }

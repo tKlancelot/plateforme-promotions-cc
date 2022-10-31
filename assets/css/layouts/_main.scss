@@ -1,0 +1,13 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    min-height: 48vw;
+    @include main-padding;
+    background-color: $bg-color;
+
+    &__body {
+        display: grid;
+        grid-template-columns: 0.25fr 0.75fr;
+        grid-gap: 1vw;
+    }
+}

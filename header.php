@@ -16,43 +16,7 @@
 
   /* quick temporary styles  */
 
-  html,body,*{
-    box-sizing: border-box;
-    margin:0;
-    padding: 0;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  }
-  
-  header,footer{
-    background-color: #000;
-    min-height: 10vw;
-    color:#fff;
-    padding-left: 12vw;
-    padding-right: 12vw;
-  }
 
-  footer{
-    min-height: 12.5vw;
-  }
-
-  header{
-    display: flex;
-    align-items: center;
-  }
-
-  header a{
-    color:orange;
-  }
-
-  #front-page,#all-offers{
-    display: flex;
-    display: grid;
-    min-height: 48vw;
-    grid-template-columns: 0.25fr 0.75fr;
-    padding-left: 12vw;
-    padding-right: 12vw;
-    background-color: whitesmoke;
-  }
 
   .heading{
     padding-left: 12vw;
@@ -63,22 +27,6 @@
     align-items: center;
   }
   
-  section, header nav,footer div{
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
-  aside{
-    background-color: #fefefe;
-    padding:2rem;
-    /* border-left:1px solid #e4e4e4;
-    border-right:1px solid #e4e4e4; */
-  }
-
-
-  section ul,aside ul{
-    margin:1rem auto;
-  }
 
   .boutique-grid{
     display: grid;
@@ -116,10 +64,7 @@
     border-top: 1px solid whitesmoke;
   }
 
-  h2{
-    text-transform: uppercase;
-    font-size: 1.2vw;
-  }
+
 
 
 
