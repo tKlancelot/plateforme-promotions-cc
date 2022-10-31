@@ -23,18 +23,28 @@
   
   header,footer{
     background-color: #000;
-    height: 7.2vw;
+    min-height: 7.2vw;
     color:#fff;
+  }
+
+  header a{
+    color:orange;
   }
 
   #front-page,#all-offers{
     display: flex;
+    display: grid;
     min-height: 48vw;
-    border:8px solid red;
+    border:4px solid red;
+    grid-template-columns: 0.25fr 0.75fr;
+  }
+
+  aside,section, header nav,footer div{
+    padding: 2rem;
   }
 
   aside,section{
-    padding: 2rem;
+    border:4px solid gainsboro;
   }
 
   section ul,aside ul{

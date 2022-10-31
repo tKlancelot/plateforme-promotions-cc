@@ -19,12 +19,22 @@ get_header();
 
             while($boutiques->have_posts()){
                 $boutiques->the_post(); ?>
+
                 <div class="boutique-card">
                     <ul>
                         <li><?php the_title()?>
                         <li><?php echo get_the_content() == '' ? 'description de la boutique : '. get_the_title() : the_content();?></li>
                         <li><a href=<?php the_permalink()?>>voir la boutique (voir single de la boutique et tous les coupons qu'elle répertorie)</a></li>
                         <li>horaires</li>
+                            <?php 
+                            if(get_field('coupons_associes')){?>
+                                <li><?php $coupon_a = get_field('coupons_associes');
+                                foreach ( $coupon_a as $coupon ) {
+                                    echo '<span style="color:red;font-weight:bolder">'.$coupon->post_name.'&nbsp;</span>';
+                                }
+                                ?></li>
+                                <?php
+                            }?>
                     </ul>
                 </div>
 

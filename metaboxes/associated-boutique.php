@@ -3,7 +3,7 @@
 
 class AssociatedBoutique {
 
-// relation entre boutique et coupons 
+    // relation entre boutique et coupons 
 
     const META_KEY = 'associated_boutique';
 
@@ -59,27 +59,6 @@ class AssociatedBoutique {
             }
         }
 
-        // var_dump($_POST['meta']);
-        // die();
-
-        // check autosave
-        // if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
-        //     return;
-
-        // check permissions
-        // if ( !current_user_can( 'edit_post', $post_id ) )
-        //     return $post_id;
-
-        // if ( ! isset( $_POST[self::META_KEY] ) ) {
-        //     return;
-        // }
-
-        // sanitize user input
-        // $associated_boutique = json_encode( $_POST[self::META_KEY] );
-
-        // save
-
-        // update_post_meta( $post_id,'coupon', $associated_boutique);
     }
 
 }

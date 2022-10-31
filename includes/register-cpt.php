@@ -56,10 +56,8 @@
             'public' => true,
             "publicly_queryable" => true,
             'menu_position' => 5,
-            'capability_type' => 'post',
             'menu_icon' => 'dashicons-tag',
-            "map_meta_cap" => true,
-            'supports' => ['editor','title','thumbnail','post-formats','custom-fields'],
+            'supports' => ['editor','title','thumbnail','post-formats'],
             'has_archive' => true,
         ];
 
@@ -88,9 +86,7 @@
             'menu_position' => 5,
             'menu_icon' => 'dashicons-cart',
             'supports' => ['editor','title','thumbnail','post-formats'],
-            "map_meta_cap" => true,
             'has_archive' => true,
-            // 'taxonomies' => array('category')
         ];
 
         register_post_type('boutique',$args);
