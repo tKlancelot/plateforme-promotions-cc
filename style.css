@@ -7,9 +7,13 @@ body,
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-aside {
-  background-color: #fefefe;
-  padding: 2vw;
+header, footer {
+  background-color: #000;
+  color: #fff;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  display: flex;
+  align-items: center;
 }
 
 h2 {
@@ -18,25 +22,16 @@ h2 {
 }
 
 header {
-  background-color: #000;
   min-height: 10vw;
-  color: #fff;
-  padding-left: 10vw;
-  padding-right: 10vw;
-  display: flex;
-  align-items: center;
 }
 
 header a {
-  color: orange;
+  color: #847568;
+  text-decoration: none;
 }
 
 footer {
   min-height: 12.5vw;
-  padding-left: 10vw;
-  padding-right: 10vw;
-  display: flex;
-  align-items: center;
 }
 
 .main {
@@ -51,6 +46,40 @@ footer {
   display: grid;
   grid-template-columns: 0.25fr 0.75fr;
   grid-gap: 1vw;
+}
+.main__header {
+  height: 4.8vw;
+  display: flex;
+  align-items: center;
+}
+
+aside {
+  background-color: #fefefe;
+  padding: 2vw;
+}
+
+.boutique-card {
+  border: 1px solid #e4e4e4;
+  background-color: #fefefe;
+  margin: auto 0;
+  height: 20vw;
+}
+.boutique-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 8vw;
+}
+.boutique-card__header img {
+  width: 40%;
+  height: auto;
+}
+.boutique-card__body {
+  padding: 1vw;
+  border-top: 1px solid #e4e4e4;
+}
+.boutique-card ul {
+  list-style: none;
 }
 
 /*# sourceMappingURL=style.css.map */

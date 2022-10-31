@@ -1,0 +1,25 @@
+  .boutique-card {
+      border: 1px solid $border-color;
+      background-color: $primary-light;
+      margin: auto 0;
+      height: 20vw;
+
+      &__header {
+          @include flex-center-center;
+          height: 8vw;
+
+          img {
+              width: 40%;
+              height: auto;
+          }
+      }
+
+      &__body {
+          padding: 1vw;
+          border-top: 1px solid $border-color;
+      }
+
+      ul {
+          list-style: none;
+      }
+  }

@@ -16,54 +16,12 @@
 
   /* quick temporary styles  */
 
-
-
-  .heading{
-    padding-left: 12vw;
-    padding-right: 12vw;
-    background-color: whitesmoke;
-    height: 4.8vw;
-    display: flex;
-    align-items: center;
-  }
-  
-
   .boutique-grid{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     place-content:center;
     grid-gap: 1vw;
   }
-
-  .boutique-card{
-    border:1px solid #e4e4e4;
-    background-color:  #fefefe;
-    margin:auto 0;
-    height: 20vw;
-  }
-
-  .boutique-card ul{
-    list-style: none;
-  }
-
-  .boutique-card__header{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 8vw;
- 
-  }
-
-  .boutique-card__header img{
-    width: 40%;
-    height: auto;
-  }
-
-  .boutique-card__body{
-    padding: 1vw;
-    border-top: 1px solid whitesmoke;
-  }
-
 
 
 

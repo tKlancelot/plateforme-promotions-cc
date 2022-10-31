@@ -7,8 +7,10 @@ body,
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-aside {
-    background-color: $primary-light;
-    padding: 2vw;
+header,footer{
+    background-color: $write;
+    color:#fff;
+    @include main-padding;
+    @include flex-center;
 }
 

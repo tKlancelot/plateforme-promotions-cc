@@ -10,4 +10,13 @@
         grid-template-columns: 0.25fr 0.75fr;
         grid-gap: 1vw;
     }
+    &__header{
+        height: 4.8vw;
+        @include flex-center;
+    }
+}
+
+aside {
+    background-color: $primary-light;
+    padding: 2vw;
 }
