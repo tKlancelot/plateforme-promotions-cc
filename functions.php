@@ -89,9 +89,11 @@ add_action('init', 'montheme_register_taxonomies');
 
 // require_once(__DIR__.'/metaboxes/discount-value.php');
 // require_once(__DIR__.'/metaboxes/associated-boutique.php');
+require_once(__DIR__.'/metaboxes/phone-number.php');
 
 // DiscountValue::register();
 // AssociatedBoutique::register();
+PhoneNumber::register();
 
 
 // Remove p tags from category description

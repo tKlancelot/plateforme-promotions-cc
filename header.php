@@ -14,6 +14,8 @@
 
 <style>
 
+  /* quick temporary styles  */
+
   html,body,*{
     box-sizing: border-box;
     margin:0;
@@ -23,8 +25,19 @@
   
   header,footer{
     background-color: #000;
-    min-height: 7.2vw;
+    min-height: 10vw;
     color:#fff;
+    padding-left: 12vw;
+    padding-right: 12vw;
+  }
+
+  footer{
+    min-height: 12.5vw;
+  }
+
+  header{
+    display: flex;
+    align-items: center;
   }
 
   header a{
@@ -35,21 +48,80 @@
     display: flex;
     display: grid;
     min-height: 48vw;
-    border:4px solid red;
     grid-template-columns: 0.25fr 0.75fr;
+    padding-left: 12vw;
+    padding-right: 12vw;
+    background-color: whitesmoke;
   }
 
-  aside,section, header nav,footer div{
-    padding: 2rem;
+  .heading{
+    padding-left: 12vw;
+    padding-right: 12vw;
+    background-color: whitesmoke;
+    height: 4.8vw;
+    display: flex;
+    align-items: center;
+  }
+  
+  section, header nav,footer div{
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
-  aside,section{
-    border:4px solid gainsboro;
+  aside{
+    background-color: #fefefe;
+    padding:2rem;
+    /* border-left:1px solid #e4e4e4;
+    border-right:1px solid #e4e4e4; */
   }
+
 
   section ul,aside ul{
     margin:1rem auto;
   }
+
+  .boutique-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    place-content:center;
+    grid-gap: 1vw;
+  }
+
+  .boutique-card{
+    border:1px solid #e4e4e4;
+    background-color:  #fefefe;
+    margin:auto 0;
+    height: 20vw;
+  }
+
+  .boutique-card ul{
+    list-style: none;
+  }
+
+  .boutique-card__header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 8vw;
+ 
+  }
+
+  .boutique-card__header img{
+    width: 40%;
+    height: auto;
+  }
+
+  .boutique-card__body{
+    padding: 1vw;
+    border-top: 1px solid whitesmoke;
+  }
+
+  h2{
+    text-transform: uppercase;
+    font-size: 1.2vw;
+  }
+
+
 
 
 </style>

@@ -4,12 +4,25 @@ get_header();
 
 ?>
 
+<div class="heading">
+    <!-- a déplacer dans main lorsqu'on fera le front -->
+    <h2>listing des cards boutiques
+        <?php 
+            $count = wp_count_posts('boutique');
+            echo '('.$count->publish.')'
+        ;?>
+    </h2>
+</div>
+
 <main id="front-page">
 
     <?php include(__DIR__.'/parts/aside.php');?>
 
     <section>
-        <h2>listing des cards boutiques</h2>
+
+
+        <div class="boutique-grid">
+
 
         <?php
             $boutiques =  new WP_Query(array(
@@ -19,13 +32,30 @@ get_header();
 
             while($boutiques->have_posts()){
                 $boutiques->the_post(); ?>
+                
+                <?php
+                    $phoneNumber = get_post_meta(get_the_ID(),PhoneNumber::META_KEY,true);
+                    $terms = get_the_terms(get_the_id(),'store');
+                ?>
+                
 
                 <div class="boutique-card">
-                    <ul>
-                        <li><?php the_title()?>
-                        <li><?php echo get_the_content() == '' ? 'description de la boutique : '. get_the_title() : the_content();?></li>
-                        <li><a href=<?php the_permalink()?>>voir la boutique (voir single de la boutique et tous les coupons qu'elle répertorie)</a></li>
-                        <li>horaires</li>
+                    <div class="boutique-card__header">
+                        <?php the_post_thumbnail();?>
+                    </div>
+                    <div class="boutique-card__body">
+                        <ul>
+                            <li><?php the_title()?>
+                            <li><?php echo get_the_content() == '' ? 'description de la boutique : '. get_the_title() : the_content();?></li>
+                            <li><a href=<?php the_permalink()?>>voir la boutique + coupons-A</a></li>
+                            <li>horaires</li>
+                            <li>
+                                <?php 
+                                    foreach($terms as $term){
+                                        echo '<span style="color:mediumblue;font-weight:bolder">'.$term->name.'&nbsp;</span>';
+                                    }
+                                ?>
+                            </li>  
                             <?php 
                             if(get_field('coupons_associes')){?>
                                 <li><?php $coupon_a = get_field('coupons_associes');
@@ -35,12 +65,16 @@ get_header();
                                 ?></li>
                                 <?php
                             }?>
-                    </ul>
+                            <li><?php echo $phoneNumber ?></li>
+                        </ul>
+                    </div>
                 </div>
 
             <?php 
             }
         ?> 
+
+        </div>
 
     </section>
 

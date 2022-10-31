@@ -7,11 +7,17 @@ get_header();
 
 ?>
 
+<div class="heading">
+    <!-- a déplacer dans main lorsqu'on fera le front -->
+    <h2>listing coupon test</h2>
+</div>
+
 <main id="all-offers">
+
+
     <?php include(__DIR__.'/parts/aside.php');?>
 
     <section>
-        <h2>listing coupon test</h2>
         <?php
             $coupons =  new WP_Query(array(
                 'post_per_page' => '16',
@@ -34,7 +40,7 @@ get_header();
                             if(get_field('coupons_associes')){?>
                                 <li><?php $boutique_a = get_field('coupons_associes');
                                 foreach ( $boutique_a as $boutique ) {
-                                    echo '<span style="color:blue;font-weight:bolder">'.$boutique->post_name.'&nbsp;</span>';
+                                    echo '<a href='.$boutique->guid.'><span style="color:blue;font-weight:bolder">'.$boutique->post_name.'&nbsp;</span></a>';
                                 }
                                 ?></li>
                                 <?php
