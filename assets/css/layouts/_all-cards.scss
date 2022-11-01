@@ -1,0 +1,99 @@
+.boutique-card,
+.promotion-card {
+    border: 1px solid $border-color;
+    background-color: $primary-light;
+    margin: auto 0;
+    height: auto;
+    transition: 0.1s ease-in;
+    @include card-shadow;
+
+    &__header {
+        @include flex-center-center;
+        height: 8vw;
+        width: 18vw;
+
+        img {
+            width: 40%;
+            height: auto;
+        }
+    }
+
+    &__body {
+        padding: 2vw;
+        border-top: 1px solid $border-color;
+        height: 14vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    ul {
+        list-style: none;
+    }
+}
+
+.promotion-card,
+.single-card {
+    border: 1px solid $border-color;
+    background-color: $primary-light;
+    height: auto;
+
+    &__header {
+        height: 8vw;
+
+        img {
+            width: 32%;
+        }
+
+        span {
+            font-size: 2vw;
+            color: $write-transparent;
+        }
+    }
+
+    &__body {
+        height: 12vw;
+        align-items: flex-start;
+    }
+
+    #sponsored {
+        position: absolute;
+        text-align: center;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 18vw;
+        height: 20vw;
+        >div {
+            background-color: darkslategray;
+            color:$primary;
+            width: min-content;
+            padding: 0.25rem 2rem 0.5rem;
+            font-size: 0.6vw;
+            text-shadow: 0px 0px $secondary;
+        }
+    }
+}
+
+.single-card {
+    &__header {
+        display: flex;
+        width: 14vw;
+
+        img {
+            width: 60%;
+            height: auto;
+            margin: auto;
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        text-align: center;
+    }
+}

@@ -12,15 +12,12 @@ nav a {
         display: flex;
         list-style: none;
         gap:1rem;
-        // li{
-        //     margin:auto 1rem;
-        // }
     }
 }
 
 .navbar {
+    // background-color: darkslategrey;    
     min-height: 8vw;
-    background-color: darkslategrey;
     @include flex-center;
     justify-content: space-between;
 

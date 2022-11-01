@@ -13,3 +13,7 @@
     align-items: center;
     justify-content: center;
 }
+
+@mixin card-shadow{
+    box-shadow: 1px 1px 0px 0px $primary, -1px -1px 0px 0px $primary;
+}

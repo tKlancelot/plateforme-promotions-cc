@@ -1,7 +1,7 @@
 <aside>
     <!-- listing des catégories : taxo associée aux boutiques -->
     <div>
-        <h2>listing des categories</h2>
+        <h2>catégories</h2>
         <ul>  
         <?php
             $args = array(
@@ -21,7 +21,7 @@
 
     <!-- listing des boutiques -->
     <div>
-        <h2>listing des boutiques</h2>
+        <h2>boutiques</h2>
 
         <?php
         $marchand =  new WP_Query(array(

@@ -1,4 +1,32 @@
   h2 {
+    text-transform: uppercase;
+    font-size: 1.2vw;
+  }
+
+  .boutique-card{
+    &__body{
+      color:$write;
+      h3{
+        text-transform: uppercase;
+        font-weight: 200;
+        font-size: 0.84vw;
+      }
+      h6{
+        font-size: 0.76vw;
+        font-weight: 200;
+      }
+    }
+  }
+
+  .promotion-card {
+    h3 {
       text-transform: uppercase;
-      font-size: 1.2vw;
+    }
+    h4{
+      font-weight: 200;
+      font-size: 0.80vw;
+      text-transform: uppercase;
+      color:$secondary;
+    }
+
   }
