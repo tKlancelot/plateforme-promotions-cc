@@ -1,76 +1,64 @@
 .main {
     display: flex;
     flex-direction: column;
-    min-height: 64vw;
-
+    min-height: 48vw;
     background-color: $bg-color;
 
     &__body {
         @include main-padding;
 
-        .boutique-grid,.promotion-grid {
+        .list-boutique-grid,
+        .boutique-grid,
+        .promotion-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             place-content: center;
             grid-gap: 1vw;
+            padding-bottom: 1vw;
         }
     }
 
     &__header {
         height: 4.8vw;
-        @include flex-center;
+        @include flex-center-center;
         @include main-padding;
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
 
+#taxo-store,
 #front-page,
 #all-offers {
     .main {
         &__body {
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: auto auto;
             display: grid;
             grid-gap: 1vw;
         }
     }
 }
 
-#single-boutique {
-    .main {
-        &__body {
-            // border: 2px solid red;
-
-            .boutique-content {
-                &__body{
-                    display: grid;
-                    grid-template-columns: auto 1fr;
-                    &__left{
-                        border: 4px solid blue;
-                    }
-                    &__right{
-                        border: 4px solid red;
-                    }
-                }
-            }
-
-            .linked-promotions {
-                &__body {
-                    .heading-frame{
-                        height: 4.8vw;
-                        @include flex-center;
-                    }
-                    .grid {
-                        // border: 4px solid grey;
-                        display: grid;
-                        grid-template-columns: repeat(4,1fr);
-                        grid-gap: 1vw;
-                    }
-                }
-            }
+#taxo-store{
+    .main{
+        &__body{
+            grid-template-columns: auto auto;
         }
     }
 }
 
-aside {
+.aside {
     background-color: $primary-light;
     padding: 2vw;
+    width: 18vw;
+    height: fit-content;
+    &__body{
+        display: grid;
+        grid-gap: 1.5vw;
+        &__item{
+            h2{
+                margin:auto auto 1rem;
+            }
+        }
+    }
 }

@@ -4,28 +4,87 @@ nav a {
 }
 
 .topbar {
-    border-bottom: 1px solid $secondary;
+    border-bottom: 1px solid $secondary-transparent;
     min-height: 2.4vw;
     justify-content: space-between;
     @include flex-center;
-    ul{
+
+    ul {
         display: flex;
         list-style: none;
-        gap:1rem;
+        gap: 1rem;
+        a{
+            text-transform: uppercase;
+            font-size: 0.76vw;
+        }
     }
 }
 
 .navbar {
     // background-color: darkslategrey;    
-    min-height: 8vw;
     @include flex-center;
     justify-content: space-between;
 
     a {
+        width: 8%;
+        display: flex;
+        padding: 0.5rem 0rem;
         img {
-            width: 10%;
+            width: 100%;
             height: auto;
-            margin: 1rem;
+        }
+    }
+
+    align-items: flex-end;
+
+    .menu {
+        // border: 2px solid red;
+        display: flex;
+        grid-template-columns: 1fr 1fr;
+
+        &__drop-down{
+            width: 12.5vw;
+        }
+
+        &__drop-down {
+            // background-color: $secondary-transparent;
+            height: 2.25vw;
+            >ul {
+                position: absolute;
+                height: auto;
+                #trigger{
+                    height: 2.25vw;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width:12.5vw;
+                    cursor: pointer;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                }
+                .submenu {
+                    display: none;
+                    z-index: 999;
+                    background-color: $write;
+
+                }
+                .submenu.block{
+                    display: block;
+                }
+            }
+            i.fa-solid.fa-chevron-down{
+                color:$secondary;
+                transition: 0.1s linear;
+            }
+            .turn-180{
+                transform: rotate(180deg);
+            }
+        }
+        &__search{
+            width: auto;
+            ul{
+                @include flex-center-center;
+            }
         }
     }
 }

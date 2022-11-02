@@ -27,6 +27,10 @@ function theme_supports()
     // Nouvelles tailles par défaut
     add_image_size('post-thumbnail', 210, 297);
 
+    // theme supports widget
+    add_theme_support('widgets');
+    add_theme_support('widgets-block-editor');
+
     // ajouter le support de titres dynamiques
     add_theme_support('title-tag');
     add_theme_support('custom-logo');
@@ -50,11 +54,16 @@ function mytheme_register_menus()
 
 add_action('init','mytheme_register_menus');
 
+function mytheme_register_sidebar(){
+    register_sidebar();
+}
+
+add_action('init','mytheme_register_sidebar');
 
 function enqueue_styles()
 {
     // $version = wp_get_theme()->get('Version');
-    // wp_enqueue_style('font-awesome',get_template_directory_uri()."/assets/fontawesome/css/all.css",array(),'6.1.2','all');   
+    wp_enqueue_style('font-awesome',"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css",array(),'6.2.0','all');   
     wp_enqueue_style('main-css',get_template_directory_uri()."/style.css",array(),'1.0.0','all');
 }
 
@@ -62,7 +71,7 @@ function enqueue_scripts()
 {
     // $version = wp_get_theme()->get('Version');
     wp_enqueue_script('jquery',"https://code.jquery.com/jquery-3.6.0.slim.min.js",[],'3.6.0',false);
-    // wp_enqueue_script('main-script',get_template_directory_uri()."/js/main.js",[],$version,'all');
+    wp_enqueue_script('main-script',get_template_directory_uri()."/js/main.js",[],$version,'all');
     // wp_enqueue_script('jquery-progress-bar',"https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/0.6.1/progressbar.js",[],'0.6.1',false);
     // wp_enqueue_script('gsap', "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js",[],'3.10.4',false);
     // wp_enqueue_script('gsap-scroll-trigger', "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js",[],'3.10.4',false);
@@ -99,7 +108,7 @@ PhoneNumber::register();
 
 
 // Remove p tags from category description
-// remove_filter('the_content','wpautop');
+remove_filter('the_content','wpautop');
 
 // gestion de la direction a double sens de la relation des cpt
 
@@ -199,3 +208,8 @@ function bidirectional_acf_update_value( $value, $post_id, $field  ) {
 }
 
 add_filter('acf/update_value/name=promotions_associees', 'bidirectional_acf_update_value', 10,3);
+
+function wpdocs_custom_excerpt_length( $length ) {
+	return 16;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );

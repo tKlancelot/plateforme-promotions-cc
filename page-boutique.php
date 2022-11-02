@@ -1,5 +1,11 @@
 <?php
 
+/* Template Name: All Boutiques */
+
+?>
+
+<?php
+
 get_header();
 
 ?>
@@ -17,14 +23,16 @@ get_header();
         </h2>
     </div>
 
+
+
     <div class="main__body">
+
         <?php include(__DIR__.'/parts/aside.php');?>
 
         <section>
-
+            <?php require(__DIR__.'/parts/filters.php');?>
 
             <div class="boutique-grid">
-
 
             <?php
                 $boutiques =  new WP_Query(array(

@@ -1,0 +1,33 @@
+#single-boutique {
+    .main {
+        &__body {
+            .boutique-content {
+                &__body{
+                    display: grid;
+                    grid-template-columns: auto 1fr;
+                    grid-gap: 1vw;
+                    &__right{
+                        display: grid;
+                        grid-template-columns: 1fr 0.5fr;
+                    }
+                }
+            }
+
+            .linked-promotions {
+                padding-bottom:2vw;
+                &__body {
+                    .heading-frame{
+                        height: 4.8vw;
+                        @include flex-center;
+                    }
+                    .grid {
+                        // border: 4px solid grey;
+                        display: grid;
+                        grid-template-columns: repeat(4,1fr);
+                        grid-gap: 1vw;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -8,8 +8,8 @@
   <meta name="description" content="site de promotions, boutiques et centres commerciaux">
   <link rel="icon" href="<?= get_template_directory_uri() . '/assets/favicon/fav.png' ?>" />
   <?php 
-        wp_head(); 
-      ?>
+    wp_head(); 
+  ?>
 </head>
 
 <body>
@@ -33,28 +33,44 @@
               the_custom_logo();
             }
           ?>
-          <ul>
-            <li>boutiques</li>
-            <ul>
-              <li><a href="<?php echo get_home_url(); ?>">toutes les boutiques</a></li>
-              <li><a href="<?php echo site_url('/all-offers');?>">toutes les offres</a></li>
-              <hr/>
-              <?php
-                $args = array(
-                    'taxonomy' => 'store',
-                    'orderby' => 'name', // term_id
-                    "order" => "ASC",
-                    'hide_empty' => 0,
-                    'fields' => 'all',
-                    // 'exclude' => 1,
-                    'title_li'=>'',
-                    'show_count'=> 0
-                );
-                $cats = wp_list_categories( $args );
-              ?>
-            </ul>  
-          </ul>
+          <div class="menu">
+            <div class="menu__drop-down">
+              <ul>
+                <li id="trigger"><span>Boutiques</span><span><i class="fa-sharp fa-solid fa-chevron-down"></i></span></li>
+                <ul class="submenu">
+                    <!-- <li><a href="<?php 
+                      // echo get_home_url(); 
+                    ?>">Page d'accueil</a></li> -->
+                    <li><a href="<?php echo site_url('/store/all'); ?>">Toutes les boutiques</a></li>
+                    <li><a href="<?php echo site_url('/all-offers');?>">Toutes les offres</a></li>
+                    <hr/>
+                    <?php
+                      $args = array(
+                          'taxonomy' => 'store',
+                          'orderby' => 'name', // term_id
+                          "order" => "ASC",
+                          'hide_empty' => 0,
+                          'fields' => 'all',
+                          'exclude' => 1,
+                          'exclude_tree'=>true,
+                          'child_of' => 0,
+                          'title_li'=>'',
+                          'show_count'=> 0
+                      );
+                      $cats = wp_list_categories( $args );
+                    ?>
+                  </ul>  
+              </ul>
+            </div>
+            <div class="menu__search">
+              <ul>
+                <li><?php get_search_form(); ?></li>
+              </ul>
+            </div>
+          </div>
         </nav>
         <?php
         ?>
     </header>
+
+

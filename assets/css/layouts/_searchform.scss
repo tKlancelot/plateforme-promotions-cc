@@ -1,0 +1,29 @@
+#searchform{
+    height: 2.2vw;
+    padding: 0.36rem;
+    
+    >div{
+        display: flex;
+        height: 100%;
+        grid-gap: 0.5rem;
+        input{
+            border:1px solid $secondary-transparent;
+            background-color: $write;
+            color:$primary;
+            text-indent: 0.25rem;
+            &::placeholder{
+                // color:red;
+                font-family: $font-primary-italic;
+            }
+        }
+        input[type=submit]{
+            width: 4.8vw;
+            background-color: $secondary-transparent;
+            transition: 0.1s linear;
+            cursor: pointer;
+            &:hover{
+                background-color: $write;
+            }
+        }
+    }
+}

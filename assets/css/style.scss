@@ -2,7 +2,7 @@
 
 // // utils
 
-// @import 'utils/typography';
+@import 'utils/typography';
 @import 'utils/variables';
 @import 'utils/mixins';
 // @import 'utils/animations';
@@ -16,8 +16,8 @@
 @import 'components/headings';
 @import 'components/list-items';
 @import 'components/links';
-// @import 'components/buttons';
-// @import 'components/paragraphs';
+@import 'components/buttons';
+@import 'components/paragraphs';
 
 // //layouts
 
@@ -26,3 +26,6 @@
 @import 'layouts/main';
 @import 'layouts/navbar';
 @import 'layouts/all-cards';
+@import 'layouts/single';
+@import 'layouts/taxo-grid';
+@import 'layouts/searchform';

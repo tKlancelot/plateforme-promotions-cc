@@ -1,26 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Playfair+Display:wght@400;500&display=swap");
+@font-face {
+  font-family: "Roboto";
+  src: url("../plateforme-promotions-cc/assets/fonts/roboto/Roboto-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto Bold";
+  src: url("../plateforme-promotions-cc/assets/fonts/roboto/Roboto-Bold.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto Light";
+  src: url("../plateforme-promotions-cc/assets/fonts/roboto/Roboto-Light.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto Italic";
+  src: url("../plateforme-promotions-cc/assets/fonts/roboto/Roboto-Italic.ttf") format("truetype");
+  font-display: swap;
+}
 html,
 body,
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: "Roboto";
 }
 
 header, footer {
-  background-color: #000;
+  background-color: #161616;
   color: #fff;
-  padding-left: 12vw;
-  padding-right: 12vw;
+  padding-left: 14vw;
+  padding-right: 14vw;
 }
 
 h2 {
   text-transform: uppercase;
-  font-size: 1.2vw;
+  font-family: "Roboto Bold";
+  font-size: 1.16vw;
+  color: #161616;
 }
 
 .boutique-card__body {
-  color: #000;
+  color: #161616;
 }
 .boutique-card__body h3 {
   text-transform: uppercase;
@@ -39,27 +62,91 @@ h2 {
   font-weight: 200;
   font-size: 0.8vw;
   text-transform: uppercase;
-  color: #847568;
+  color: #b8bcbe;
 }
 
-ul li, li {
-  font-size: 0.88vw;
+ul li,
+li {
+  font-size: 0.84vw;
 }
 
-.navbar ul hr {
+hr {
   border: unset;
-  height: 0px;
-  border-top: 1px solid rgba(158, 158, 158, 0.2823529412);
+  height: 1px;
+  background-color: rgba(184, 188, 190, 0.2823529412);
   margin-block-start: 0.5rem;
   margin-block-end: 0.5rem;
 }
 
-ul, li {
+ul,
+li {
   list-style: none;
+}
+
+.aside__body__item ul {
+  display: grid;
+}
+.aside__body__item:nth-child(2) ul li a,
+.aside__body__item:nth-child(2) ul li,
+.aside__body__item:nth-child(2) ul li a,
+.aside__body__item:nth-child(2) ul li {
+  text-transform: initial;
+}
+
+.single-card__body ul {
+  grid-gap: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu__drop-down ul li a {
+  text-transform: capitalize;
+  width: 12.5vw;
+  padding: 0.75rem 1rem;
+  position: relative;
+  display: flex;
+}
+.menu__drop-down ul li a:hover {
+  color: #b8bcbe;
+}
+.menu__drop-down ul li:nth-child(1) a, .menu__drop-down ul li:nth-child(2) a {
+  text-transform: initial;
 }
 
 a {
   text-decoration: none;
+  font-size: 0.8vw;
+  color: #161616;
+}
+
+button {
+  cursor: pointer;
+}
+
+.single-card__body button {
+  background-color: #161616;
+  color: #f4f4f4;
+  padding: 0.75rem;
+  min-width: 10vw;
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  transform-origin: center;
+  transition: 0s;
+}
+.single-card__body button:hover {
+  background-color: #b8bcbe;
+}
+.single-card__body button:active {
+  transform: scale(0.98);
+}
+
+p {
+  color: #161616;
+  font-size: 0.88vw;
+}
+
+.list-boutique-card__body p {
+  font-size: 0.72vw;
 }
 
 footer {
@@ -71,58 +158,57 @@ footer {
 .main {
   display: flex;
   flex-direction: column;
-  min-height: 64vw;
+  min-height: 48vw;
   background-color: #fafafa;
 }
 .main__body {
-  padding-left: 12vw;
-  padding-right: 12vw;
+  padding-left: 14vw;
+  padding-right: 14vw;
 }
-.main__body .boutique-grid, .main__body .promotion-grid {
+.main__body .list-boutique-grid,
+.main__body .boutique-grid,
+.main__body .promotion-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   place-content: center;
   grid-gap: 1vw;
+  padding-bottom: 1vw;
 }
 .main__header {
   height: 4.8vw;
   display: flex;
   align-items: center;
-  padding-left: 12vw;
-  padding-right: 12vw;
+  justify-content: center;
+  padding-left: 14vw;
+  padding-right: 14vw;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
+#taxo-store .main__body,
 #front-page .main__body,
 #all-offers .main__body {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto auto;
   display: grid;
   grid-gap: 1vw;
 }
 
-#single-boutique .main__body .boutique-content__body {
-  display: grid;
-  grid-template-columns: auto 1fr;
-}
-#single-boutique .main__body .boutique-content__body__left {
-  border: 4px solid blue;
-}
-#single-boutique .main__body .boutique-content__body__right {
-  border: 4px solid red;
-}
-#single-boutique .main__body .linked-promotions__body .heading-frame {
-  height: 4.8vw;
-  display: flex;
-  align-items: center;
-}
-#single-boutique .main__body .linked-promotions__body .grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 1vw;
+#taxo-store .main__body {
+  grid-template-columns: auto auto;
 }
 
-aside {
+.aside {
   background-color: #fefefe;
   padding: 2vw;
+  width: 18vw;
+  height: fit-content;
+}
+.aside__body {
+  display: grid;
+  grid-gap: 1.5vw;
+}
+.aside__body__item h2 {
+  margin: auto auto 1rem;
 }
 
 nav a {
@@ -131,7 +217,7 @@ nav a {
 }
 
 .topbar {
-  border-bottom: 1px solid #847568;
+  border-bottom: 1px solid rgba(184, 188, 190, 0.2823529412);
   min-height: 2.4vw;
   justify-content: space-between;
   display: flex;
@@ -142,19 +228,75 @@ nav a {
   list-style: none;
   gap: 1rem;
 }
+.topbar ul a {
+  text-transform: uppercase;
+  font-size: 0.76vw;
+}
 
 .navbar {
-  min-height: 8vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  align-items: flex-end;
+}
+.navbar a {
+  width: 8%;
+  display: flex;
+  padding: 0.5rem 0rem;
 }
 .navbar a img {
-  width: 10%;
+  width: 100%;
   height: auto;
-  margin: 1rem;
+}
+.navbar .menu {
+  display: flex;
+  grid-template-columns: 1fr 1fr;
+}
+.navbar .menu__drop-down {
+  width: 12.5vw;
+}
+.navbar .menu__drop-down {
+  height: 2.25vw;
+}
+.navbar .menu__drop-down > ul {
+  position: absolute;
+  height: auto;
+}
+.navbar .menu__drop-down > ul #trigger {
+  height: 2.25vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 12.5vw;
+  cursor: pointer;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.navbar .menu__drop-down > ul .submenu {
+  display: none;
+  z-index: 999;
+  background-color: #161616;
+}
+.navbar .menu__drop-down > ul .submenu.block {
+  display: block;
+}
+.navbar .menu__drop-down i.fa-solid.fa-chevron-down {
+  color: #b8bcbe;
+  transition: 0.1s linear;
+}
+.navbar .menu__drop-down .turn-180 {
+  transform: rotate(180deg);
+}
+.navbar .menu__search {
+  width: auto;
+}
+.navbar .menu__search ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.list-boutique-card,
 .boutique-card,
 .promotion-card {
   border: 1px solid #e4e4e4;
@@ -164,19 +306,22 @@ nav a {
   transition: 0.1s ease-in;
   box-shadow: 1px 1px 0px 0px #f4f4f4, -1px -1px 0px 0px #f4f4f4;
 }
+.list-boutique-card__header,
 .boutique-card__header,
 .promotion-card__header {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 8vw;
-  width: 18vw;
+  width: 17.5vw;
 }
+.list-boutique-card__header img,
 .boutique-card__header img,
 .promotion-card__header img {
-  width: 40%;
-  height: auto;
+  height: 56%;
+  width: auto;
 }
+.list-boutique-card__body,
 .boutique-card__body,
 .promotion-card__body {
   padding: 2vw;
@@ -187,6 +332,7 @@ nav a {
   align-items: center;
   justify-content: space-between;
 }
+.list-boutique-card ul,
 .boutique-card ul,
 .promotion-card ul {
   list-style: none;
@@ -204,17 +350,43 @@ nav a {
 }
 .promotion-card__header img,
 .single-card__header img {
-  width: 32%;
+  width: 36%;
+  height: auto;
 }
 .promotion-card__header span,
 .single-card__header span {
   font-size: 2vw;
-  color: rgba(0, 0, 0, 0.5333333333);
+  color: rgba(22, 22, 22, 0.5019607843);
 }
 .promotion-card__body,
 .single-card__body {
   height: 12vw;
   align-items: flex-start;
+  z-index: 9;
+  position: relative;
+}
+.promotion-card .absolute-info-frame,
+.single-card .absolute-info-frame {
+  position: absolute;
+  width: 17.5vw;
+  height: 20vw;
+  display: flex;
+  justify-content: flex-end;
+}
+.promotion-card .absolute-info-frame > div,
+.single-card .absolute-info-frame > div {
+  padding: 0.5rem;
+  z-index: 99;
+}
+.promotion-card .absolute-info-frame > div i,
+.single-card .absolute-info-frame > div i {
+  cursor: pointer;
+}
+.promotion-card .absolute-info-frame .fa-circle-info:before,
+.promotion-card .absolute-info-frame .fa-info-circle:before,
+.single-card .absolute-info-frame .fa-circle-info:before,
+.single-card .absolute-info-frame .fa-info-circle:before {
+  color: #b8bcbe;
 }
 .promotion-card #sponsored,
 .single-card #sponsored {
@@ -229,20 +401,20 @@ nav a {
 }
 .promotion-card #sponsored > div,
 .single-card #sponsored > div {
-  background-color: darkslategray;
+  background-color: #161616;
   color: #f4f4f4;
   width: min-content;
   padding: 0.25rem 2rem 0.5rem;
   font-size: 0.6vw;
-  text-shadow: 0px 0px #847568;
+  text-shadow: 0px 0px #b8bcbe;
 }
 
 .single-card__header {
   display: flex;
-  width: 14vw;
+  width: 16vw;
 }
 .single-card__header img {
-  width: 60%;
+  width: 50%;
   height: auto;
   margin: auto;
 }
@@ -252,6 +424,67 @@ nav a {
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
+  grid-gap: 1rem;
+}
+
+.list-boutique-card__body {
+  align-items: flex-start;
+}
+
+#single-boutique .main__body .boutique-content__body {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 1vw;
+}
+#single-boutique .main__body .boutique-content__body__right {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+}
+#single-boutique .main__body .linked-promotions {
+  padding-bottom: 2vw;
+}
+#single-boutique .main__body .linked-promotions__body .heading-frame {
+  height: 4.8vw;
+  display: flex;
+  align-items: center;
+}
+#single-boutique .main__body .linked-promotions__body .grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1vw;
+}
+
+#taxo-store .main__body .list-boutique-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#searchform {
+  height: 2.2vw;
+  padding: 0.36rem;
+}
+#searchform > div {
+  display: flex;
+  height: 100%;
+  grid-gap: 0.5rem;
+}
+#searchform > div input {
+  border: 1px solid rgba(184, 188, 190, 0.2823529412);
+  background-color: #161616;
+  color: #f4f4f4;
+  text-indent: 0.25rem;
+}
+#searchform > div input::placeholder {
+  font-family: "Roboto Italic";
+}
+#searchform > div input[type=submit] {
+  width: 4.8vw;
+  background-color: rgba(184, 188, 190, 0.2823529412);
+  transition: 0.1s linear;
+  cursor: pointer;
+}
+#searchform > div input[type=submit]:hover {
+  background-color: #161616;
 }
 
 /*# sourceMappingURL=style.css.map */

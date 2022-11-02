@@ -1,27 +1,81 @@
 // style global
 
-ul li,li{
-    font-size: 0.88vw;
+ul li,
+li {
+    font-size: 0.84vw;
 }
 
 // separateur
 
-.navbar{
-    ul{
-        hr{
-            border:unset;
-            height: 0px;
-            border-top: 1px solid #9e9e9e48;
-            margin-block-start: 0.5rem;
-            margin-block-end: 0.5rem;
+hr {
+    border: unset;
+    height: 1px;
+    background-color: $secondary-transparent;
+    margin-block-start: 0.5rem;
+    margin-block-end: 0.5rem;
+}
+
+// traite des ul et li du site
+
+ul,
+li {
+    list-style: none;
+}
+
+.aside__body__item {
+    ul {
+        display: grid;
+
+        li {
+            // height: 1.5vw;
+            // @include flex-center;
+            // text-transform: capitalize;
         }
     }
 }
 
+.aside__body__item:nth-child(2),
+.aside__body__item:nth-child(2) {
+    ul {
 
-// traite des ul et li du site
-
-ul,li{
-    list-style: none;
+        li a,
+        li {
+            text-transform: initial;
+        }
+    }
 }
 
+.single-card {
+    &__body {
+        ul {
+            grid-gap: 1rem;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+.menu {
+    &__drop-down {
+        ul {
+            li {
+                a {
+                    text-transform: capitalize;
+                    width: 12.5vw;
+                    padding: 0.75rem 1rem;
+                    position: relative;
+                    display: flex;
+
+                    &:hover {
+                        color: $secondary;
+                    }
+                }
+                &:nth-child(1),&:nth-child(2){
+                    a{
+                        text-transform: initial;
+                    }
+                }
+            }
+        }
+    }
+}

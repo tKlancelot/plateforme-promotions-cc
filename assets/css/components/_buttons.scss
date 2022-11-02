@@ -1,0 +1,24 @@
+button{
+    cursor: pointer;
+}
+
+.single-card{
+    &__body{
+        button{
+            background-color: $write;
+            color:$primary;
+            padding: 0.75rem;
+            min-width: 10vw;
+            border:1px solid transparent;
+            text-transform: uppercase;
+            transform-origin: center;
+            transition: 0s;
+            &:hover{
+                background-color: $secondary;
+            }
+            &:active{
+                transform: scale(0.98);
+            }
+        }
+    }
+}

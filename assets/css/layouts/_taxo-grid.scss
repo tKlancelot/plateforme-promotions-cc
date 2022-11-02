@@ -1,0 +1,11 @@
+#taxo-store{
+    .main{
+        &__body{
+            .list-boutique-grid{
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+
+            }
+        }
+    }
+}

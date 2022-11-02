@@ -1,0 +1,16 @@
+// traite des paragraphes, des description dans les cards 
+
+// global
+
+p{
+    color:$write;
+    font-size: 0.88vw;
+}
+
+.list-boutique-card{
+    &__body{
+        p{
+            font-size: 0.72vw;
+        }
+    }
+}

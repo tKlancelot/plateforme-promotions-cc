@@ -31,9 +31,15 @@ get_header();
 
                 while($promotions->have_posts()){
                     $promotions->the_post(); 
-                    ?>
-
-                    <div class="promotion-card">
+                    $intensity = get_field('valeur_promo') / 100;
+                    // echo $intensity;
+                    ?> 
+                    <div class="promotion-card" style='border-color:rgba(255, 125, 0, <?php echo $intensity?>);'>
+                        <div class="absolute-info-frame">
+                            <div>
+                                <i class="fa-solid fa-circle-info"></i>
+                            </div>
+                        </div>
                         <?php 
                             $typePromotions = get_the_terms($promotions->ID,'type-promotion');
                             foreach ($typePromotions as $typePromotion){
@@ -44,7 +50,7 @@ get_header();
                                 };
                             };
                         ?>
-                        <div class="promotion-card__header" style='background-color:#60ee40<?php the_field('valeur_promo');?>'>
+                        <div class="promotion-card__header">
                             <span><?php the_field('valeur_promo');?> %</span>
                         </div>
                         <div class="promotion-card__body">

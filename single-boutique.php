@@ -35,13 +35,19 @@ get_header();
                                     ?>
                                 </li>  
                                 <li><?php echo $phoneNumber ?></li>
-                                <li><button>// to do : link to map</button></li>
+                                <!-- to do  -->
+                                <li><button>link to map</button></li>
                             </ul>
                         </div>
                     </div>
                 </div>    
                 <div class="boutique-content__body__right">
-                    <?php the_content();?>
+                    <div class="description">
+                        <?php the_content();?>
+                    </div>
+                    <div class="schedule">
+                        <p>horaires</p>
+                    </div>
                 </div>            
             </div>
         </div>

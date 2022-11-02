@@ -22,7 +22,7 @@
             'labels' => [
                 'name' => 'store',
                 'singular_name'     => 'Store',
-                'search_items'      => 'Rechercher des type de store',
+                'search_items'      => 'Rechercher des types de store',
                 'all_items'         => 'Tous les types de store',
                 'edit_item'         => 'Editer le type de store',
                 'update_item'       => 'Mettre à jour le type de store',
@@ -85,7 +85,7 @@
             "publicly_queryable" => true,
             'menu_position' => 5,
             'menu_icon' => 'dashicons-cart',
-            'supports' => ['editor','title','thumbnail','post-formats'],
+            'supports' => ['editor','title','thumbnail','excerpt','post-formats'],
             'has_archive' => true,
         ];
 
