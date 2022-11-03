@@ -23,14 +23,10 @@ li {
 }
 
 .aside__body__item {
-    ul {
+    .children {
         display: grid;
-
-        li {
-            // height: 1.5vw;
-            // @include flex-center;
-            // text-transform: capitalize;
-        }
+        grid-gap: 1rem;
+        margin: 1rem auto 0;
     }
 }
 

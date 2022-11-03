@@ -20,7 +20,7 @@ get_header();
         <?php require(__DIR__.'/parts/aside.php');?>
 
         <section>
-            <?php require(__DIR__.'/parts/filters.php');?>
+            <?php  require(__DIR__.'/parts/filters.php');?>
             <?php 
                 // get some info about the term queried
                 // $queried_object = get_queried_object(); 

@@ -80,12 +80,11 @@
             </ul>
         </div>
 
-        <div>
-            <?php 
-                // get_sidebar();
-            ?>
-        </div>
+        <hr/>
+
+
 
 
     </div>
 </aside>
+

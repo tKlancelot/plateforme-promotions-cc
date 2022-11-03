@@ -49,6 +49,7 @@ nav a {
         &__drop-down {
             // background-color: $secondary-transparent;
             height: 2.25vw;
+            z-index: 999;
             >ul {
                 position: absolute;
                 height: auto;

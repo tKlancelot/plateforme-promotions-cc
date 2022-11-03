@@ -90,14 +90,15 @@ add_action('wp_enqueue_scripts','enqueue_styles');
 add_action('wp_enqueue_scripts','enqueue_scripts');
 
 include(__DIR__.'/includes/register-cpt.php');
+include(__DIR__.'/includes/register-taxonomies.php');
 
 add_action('init', 'montheme_register_promotions'); // Le hook init lance la fonction
 add_action('init', 'montheme_register_marchand');
 add_action('init', 'montheme_register_taxonomies');
 
 
-// require_once(__DIR__.'/metaboxes/discount-value.php');
-// DiscountValue::register();
+// require_once(__DIR__.'/metaboxes/letter-ranking.php');
+// LetterRanking::register();
 
 // require_once(__DIR__.'/metaboxes/short-description.php');
 // ShortDescription::register();
@@ -213,3 +214,17 @@ function wpdocs_custom_excerpt_length( $length ) {
 	return 16;
 }
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
+
+function loadDirectory() { ?>
+    <script type="text/javascript">
+        var theme_directory = "<?php echo get_template_directory_uri() ?>";
+        var templateUrl = '<?= get_home_url(); ?>';
+    </script> 
+<?php 
+} 
+
+add_action('wp_head', 'loadDirectory');
+
+
+?>

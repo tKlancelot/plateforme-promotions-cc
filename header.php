@@ -51,9 +51,9 @@
                           "order" => "ASC",
                           'hide_empty' => 0,
                           'fields' => 'all',
-                          'exclude' => 1,
-                          'exclude_tree'=>true,
-                          'child_of' => 0,
+                          // 'exclude' => 1,
+                          // 'exclude_tree'=>true,
+                          // 'child_of' => 0,
                           'title_li'=>'',
                           'show_count'=> 0
                       );

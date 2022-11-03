@@ -1,29 +1,51 @@
-#searchform{
+#searchform {
     height: 2.2vw;
     padding: 0.36rem;
-    
-    >div{
+
+    >div {
         display: flex;
         height: 100%;
         grid-gap: 0.5rem;
-        input{
-            border:1px solid $secondary-transparent;
+
+        input {
+            border: 1px solid $secondary-transparent;
             background-color: $write;
-            color:$primary;
+            color: $primary;
             text-indent: 0.25rem;
-            &::placeholder{
+
+            &::placeholder {
                 // color:red;
                 font-family: $font-primary-italic;
             }
         }
-        input[type=submit]{
+
+        input[type=submit] {
             width: 4.8vw;
             background-color: $secondary-transparent;
             transition: 0.1s linear;
             cursor: pointer;
-            &:hover{
+
+            &:hover {
                 background-color: $write;
             }
         }
     }
+}
+
+#filterform {
+    display: flex;
+    justify-content: space-between;
+    height: 4vw;
+    align-items: center;
+
+    .label-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 1rem;
+
+        label {
+            padding: 0.5rem 0rem;
+        }
+    }
+
 }

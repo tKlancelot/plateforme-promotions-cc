@@ -42,7 +42,7 @@
 #taxo-store{
     .main{
         &__body{
-            grid-template-columns: auto auto;
+            grid-template-columns: auto 1fr;
         }
     }
 }
