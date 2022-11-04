@@ -38,12 +38,7 @@
               <ul>
                 <li id="trigger"><span>Boutiques</span><span><i class="fa-sharp fa-solid fa-chevron-down"></i></span></li>
                 <ul class="submenu">
-                    <!-- <li><a href="<?php 
-                      // echo get_home_url(); 
-                    ?>">Page d'accueil</a></li> -->
-                    <li><a href="<?php echo site_url('/store/all'); ?>">Toutes les boutiques</a></li>
-                    <li><a href="<?php echo site_url('/all-offers');?>">Toutes les offres</a></li>
-                    <hr/>
+                    <?php include_once(__DIR__.'/parts/quick-menu.php');?>
                     <?php
                       $args = array(
                           'taxonomy' => 'store',
@@ -51,9 +46,6 @@
                           "order" => "ASC",
                           'hide_empty' => 0,
                           'fields' => 'all',
-                          // 'exclude' => 1,
-                          // 'exclude_tree'=>true,
-                          // 'child_of' => 0,
                           'title_li'=>'',
                           'show_count'=> 0
                       );

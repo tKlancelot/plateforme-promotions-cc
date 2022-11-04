@@ -21,14 +21,13 @@ nav a {
 }
 
 .navbar {
-    // background-color: darkslategrey;    
     @include flex-center;
     justify-content: space-between;
 
     a {
-        width: 8%;
+        width: 6.4%;
         display: flex;
-        padding: 0.5rem 0rem;
+        padding: 1rem 0rem;
         img {
             width: 100%;
             height: auto;
@@ -38,7 +37,6 @@ nav a {
     align-items: flex-end;
 
     .menu {
-        // border: 2px solid red;
         display: flex;
         grid-template-columns: 1fr 1fr;
 
@@ -47,14 +45,13 @@ nav a {
         }
 
         &__drop-down {
-            // background-color: $secondary-transparent;
-            height: 2.25vw;
+            height: 4vw;
             z-index: 999;
             >ul {
                 position: absolute;
                 height: auto;
                 #trigger{
-                    height: 2.25vw;
+                    height: 4vw;
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
@@ -83,6 +80,7 @@ nav a {
         }
         &__search{
             width: auto;
+            @include flex-center;
             ul{
                 @include flex-center-center;
             }

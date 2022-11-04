@@ -2,8 +2,7 @@
     <div class="aside__body">
         <div class="aside__body__item">
             <ul>
-                <li><a href="<?php echo site_url('/all-offers');?>">toutes les offres</a></li>
-                <hr/>
+                <?php require(__DIR__.'/quick-menu.php');?>
             </ul>
         </div>
         <div class="aside__body__item">
@@ -11,8 +10,6 @@
             <ul>
                 <?php
                 // pour tous les post de type promo on recupere leur date
-                // donc boucle sur tous les post 
-
                 $args = array(  'post_type'=>'promotion',
                     'post_status'=>'publish',
                     'orderby'=>'post_date',
@@ -60,27 +57,39 @@
             </ul>
         </div>
 
-        <!-- listing des catégories : taxo associée aux boutiques -->
-        <div class="aside__body__item">
-            <h2>catégories</h2>
-            <ul>  
-            <?php
-                $args = array(
-                    'taxonomy' => 'store',
-                    'orderby' => 'name', // term_id
-                    "order" => "ASC",
-                    'hide_empty' => 0,
-                    'fields' => 'all',
-                    // 'exclude' => 1,
-                    'title_li'=>'',
-                    'show_count'=> 1
-                );
-                $cats = wp_list_categories( $args );
-            ?>
-            </ul>
-        </div>
-
-        <hr/>
+        <!-- test de is_page  -->
+        <?php
+            if (is_page('all-offers')) {
+                echo 'on est sur la page all-offers';    
+            }
+            elseif (is_front_page()) {?>
+                <!-- listing des catégories : taxo associée aux boutiques -->
+                <div class="aside__body__item">
+                    <h2>catégories</h2>
+                    <ul id="store-categories">  
+                    <?php
+                        $args2 = array(
+                            'taxonomy' => 'store',
+                            'orderby' => 'name', // term_id
+                            "order" => "ASC",
+                            'hide_empty' => 0,
+                            'fields' => 'all',
+                            'exclude' => 1,
+                            'title_li'=>'',
+                            'show_count'=> 1
+                        );
+                        $cats = get_categories( $args2 );
+                    ?>
+                    <?php
+                        foreach($cats as $category) {
+                            echo '<button id='.$category->slug.'>'.$category->name.'</button>';
+                        }
+                    ?>
+                    </ul>
+                </div>
+                <hr/><?php
+            }
+        ?>
 
 
 

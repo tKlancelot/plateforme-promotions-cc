@@ -1,7 +1,7 @@
 <div class="aside__body__item">
     <!-- <h2>filtres javascript</h2> -->
     <div class="btn-group">
-        <button id="all">all</button>
+        <button id="tous">all</button>
         <button id="ab">ab</button>
         <button id="cd">cd</button>
         <button id="ef">ef</button>

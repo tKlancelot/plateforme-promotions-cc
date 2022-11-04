@@ -7,14 +7,14 @@ button {
     button {
         width: 3.4vw;
         height: 2rem;
-        background-color:$write;
-        border:1px solid $write-transparent;
+        background-color: $write;
+        border: 1px solid $write-transparent;
         color: $primary-light;
         text-transform: uppercase;
     }
 }
 
-.btn-group{
+.btn-group {
     // border: 2px solid red;
     display: flex;
     justify-content: space-between;
@@ -44,7 +44,33 @@ button {
     }
 }
 
-button:disabled{
+button:disabled {
     background-color: $secondary;
-    border:1px solid $secondary-transparent;
+    border: 1px solid $secondary-transparent;
+}
+
+#store-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap:0.5rem;
+    button {
+        background-color: $write;
+        border:unset;
+        color: $primary-light;
+        padding: 0.75rem 1rem;
+        border-radius: 32px;
+        text-transform: uppercase;
+    }
+}
+
+// tags 
+
+.boutique-card {
+    .count {
+        li {
+            background-color: $write;
+            color: $primary-light;
+            padding: 0.5rem;
+        }
+    }
 }

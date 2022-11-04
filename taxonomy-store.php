@@ -21,12 +21,7 @@ get_header();
 
         <section>
             <?php require(__DIR__.'/parts/filters.php');?>
-            <?php 
-                // get some info about the term queried
-                // $queried_object = get_queried_object(); 
-                // $taxonomy = $queried_object->taxonomy;
-                // $term_id = $queried_object->term_id; 
-            ?>
+
             <div class="list-boutique-grid">
 
 
@@ -60,7 +55,7 @@ get_header();
                                         $store = get_the_term_list( $post->ID, 'store', '<li>', '', '</li>'); 
                                     ?>  
                                     <?php echo $store; ?>
-                                    <ul>
+                                    <ul class="count">
                                         <?php 
                                             $promos = get_field('promotions_associees',$post->ID);
                                             if($promos){
@@ -69,7 +64,7 @@ get_header();
                                                     $nbPromos[] = $promo; 
                                                 }
                                                 $count = sizeof($nbPromos);
-                                                echo '<li style="color:crimson;font-weight:bolder">'.$count.'&nbsp;offre(s)</li>';
+                                                echo '<li>'.$count.'&nbsp;offre(s)</li>';
                                             }
                                         ?>
                                         <?php 

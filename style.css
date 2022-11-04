@@ -68,6 +68,7 @@ h2 {
 ul li,
 li {
   font-size: 0.84vw;
+  list-style: none;
 }
 
 hr {
@@ -78,22 +79,10 @@ hr {
   margin-block-end: 0.5rem;
 }
 
-ul,
-li {
-  list-style: none;
-}
-
-.aside__body__item .children {
-  display: grid;
-  grid-gap: 1rem;
-  margin: 1rem auto 0;
-}
-
-.aside__body__item:nth-child(2) ul li a,
-.aside__body__item:nth-child(2) ul li,
-.aside__body__item:nth-child(2) ul li a,
-.aside__body__item:nth-child(2) ul li {
-  text-transform: initial;
+.aside__body__item li {
+  height: 1.6vw;
+  display: flex;
+  align-items: center;
 }
 
 .single-card__body ul {
@@ -112,13 +101,10 @@ li {
 .menu__drop-down ul li a:hover {
   color: #b8bcbe;
 }
-.menu__drop-down ul li:nth-child(1) a, .menu__drop-down ul li:nth-child(2) a {
-  text-transform: initial;
-}
 
 a {
   text-decoration: none;
-  font-size: 0.8vw;
+  font-size: 0.84vw;
   color: #161616;
 }
 
@@ -162,6 +148,26 @@ button {
 button:disabled {
   background-color: #b8bcbe;
   border: 1px solid rgba(184, 188, 190, 0.2823529412);
+}
+
+#store-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+#store-categories button {
+  background-color: #161616;
+  border: unset;
+  color: #fefefe;
+  padding: 0.75rem 1rem;
+  border-radius: 32px;
+  text-transform: uppercase;
+}
+
+.boutique-card .count li {
+  background-color: #161616;
+  color: #fefefe;
+  padding: 0.5rem;
 }
 
 p {
@@ -264,9 +270,9 @@ nav a {
   align-items: flex-end;
 }
 .navbar a {
-  width: 8%;
+  width: 6.4%;
   display: flex;
-  padding: 0.5rem 0rem;
+  padding: 1rem 0rem;
 }
 .navbar a img {
   width: 100%;
@@ -280,7 +286,7 @@ nav a {
   width: 12.5vw;
 }
 .navbar .menu__drop-down {
-  height: 2.25vw;
+  height: 4vw;
   z-index: 999;
 }
 .navbar .menu__drop-down > ul {
@@ -288,7 +294,7 @@ nav a {
   height: auto;
 }
 .navbar .menu__drop-down > ul #trigger {
-  height: 2.25vw;
+  height: 4vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -314,6 +320,8 @@ nav a {
 }
 .navbar .menu__search {
   width: auto;
+  display: flex;
+  align-items: center;
 }
 .navbar .menu__search ul {
   display: flex;
@@ -354,10 +362,6 @@ nav a {
   justify-content: space-between;
   text-align: center;
 }
-.boutique-card ul,
-.promotion-card ul {
-  list-style: none;
-}
 
 .promotion-card,
 .single-card {
@@ -371,7 +375,7 @@ nav a {
 }
 .promotion-card__header img,
 .single-card__header img {
-  width: 36%;
+  width: 44%;
   height: auto;
 }
 .promotion-card__header span,
@@ -422,12 +426,12 @@ nav a {
 }
 .promotion-card #sponsored > div,
 .single-card #sponsored > div {
-  background-color: #161616;
-  color: #f4f4f4;
+  background-color: #e4e4e4;
+  color: #161616;
   width: min-content;
-  padding: 0.25rem 2rem 0.5rem;
+  padding: 0.25rem 1rem 0.5rem;
   font-size: 0.6vw;
-  text-shadow: 0px 0px #b8bcbe;
+  text-shadow: 0px 0px rgba(184, 188, 190, 0.2823529412);
 }
 
 .single-card__header {
@@ -473,7 +477,8 @@ nav a {
 
 #taxo-store .main__body .list-boutique-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, 1fr);
+  grid-auto-flow: row;
 }
 
 #searchform {

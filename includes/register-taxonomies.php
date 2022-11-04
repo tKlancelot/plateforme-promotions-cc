@@ -19,22 +19,22 @@
             'show_admin_column' => true,
         ]);
 
-        register_taxonomy('letter-ranking', ['boutique'], [
-            'labels' => [
-                'name' => 'letter-ranking',
-                'singular_name'     => 'Letter-ranking',
-                'search_items'      => 'Rechercher des types de letter-ranking',
-                'all_items'         => 'Tous les types de letter-ranking',
-                'edit_item'         => 'Editer le type de letter-ranking',
-                'update_item'       => 'Mettre à jour le type de letter-ranking',
-                'add_new_item'      => 'Ajouter un nouveau type de letter-ranking',
-                'new_item_name'     => 'Ajouter un nouveau type de letter-ranking',
-                'menu_name'         => 'Type de letter-ranking',
-            ],
-            'show_in_rest' => true,
-            'hierarchical' => true,
-            'show_admin_column' => true,
-        ]);
+        // register_taxonomy('letter-ranking', ['boutique'], [
+        //     'labels' => [
+        //         'name' => 'letter-ranking',
+        //         'singular_name'     => 'Letter-ranking',
+        //         'search_items'      => 'Rechercher des types de letter-ranking',
+        //         'all_items'         => 'Tous les types de letter-ranking',
+        //         'edit_item'         => 'Editer le type de letter-ranking',
+        //         'update_item'       => 'Mettre à jour le type de letter-ranking',
+        //         'add_new_item'      => 'Ajouter un nouveau type de letter-ranking',
+        //         'new_item_name'     => 'Ajouter un nouveau type de letter-ranking',
+        //         'menu_name'         => 'Type de letter-ranking',
+        //     ],
+        //     'show_in_rest' => true,
+        //     'hierarchical' => true,
+        //     'show_admin_column' => true,
+        // ]);
         
         register_taxonomy('store', ['boutique'], [
             'labels' => [
