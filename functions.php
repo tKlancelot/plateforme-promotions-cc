@@ -86,6 +86,9 @@ add_action('init', 'montheme_register_taxonomies');
 require_once(__DIR__.'/metaboxes/phone-number.php');
 PhoneNumber::register();
 
+require_once(__DIR__.'/metaboxes/horaires.php');
+Horaires::register();
+
 
 // Remove p tags from category description
 remove_filter('the_content','wpautop');

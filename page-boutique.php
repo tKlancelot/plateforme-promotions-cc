@@ -45,7 +45,7 @@ get_header();
                     
                     <?php
                         $phoneNumber = get_post_meta(get_the_ID(),PhoneNumber::META_KEY,true);
-                        // $letterRanking = get_post_meta(get_the_ID(),LetterRanking::META_KEY,true);
+
                         $terms = get_the_terms(get_the_id(),'store');
                         $letterRankings = get_the_terms(get_the_id(),'letter-ranking');
                     ?>

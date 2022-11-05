@@ -1,5 +1,6 @@
 button {
     cursor: pointer;
+    font-size: 0.72vw;
 }
 
 #filterform,
@@ -58,9 +59,10 @@ button:disabled {
         background-color: $primary-light;
         border: 1px solid $write;
         color: $write;
-        padding: 0.75rem 1rem;
+        padding: 0.4rem;
         border-radius: 32px;
-        text-transform: uppercase;
+        text-transform: capitalize;
+        min-width: 4vw;
         &:hover{
             background-color: $write;
             color: $primary;
