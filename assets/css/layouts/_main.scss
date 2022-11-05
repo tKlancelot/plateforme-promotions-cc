@@ -12,7 +12,7 @@
         .promotion-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            place-content: center;
+            // place-content: center;
             grid-gap: 1vw;
             padding-bottom: 1vw;
         }
@@ -32,7 +32,7 @@
 #all-offers {
     .main {
         &__body {
-            grid-template-columns: auto auto;
+            grid-template-columns:auto 1fr;
             display: grid;
             grid-gap: 1vw;
         }

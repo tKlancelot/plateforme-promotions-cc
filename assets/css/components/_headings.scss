@@ -2,33 +2,34 @@
     text-transform: uppercase;
     font-family: $font-primary-bold;
     font-size: 1.16vw;
-    color:$write;
+    color: $write;
   }
 
-  .boutique-card{
-    &__body{
-      color:$write;
-      h3{
-        text-transform: uppercase;
-        font-weight: 200;
-        font-size: 0.84vw;
+  .boutique-card,
+  .promotion-card,
+  .single-card {
+    &__body {
+      color: $write;
+
+      h2 {
+        text-transform: capitalize;
+        font-size: 0.96vw;
       }
-      h6{
+
+      h6 {
         font-size: 0.76vw;
         font-weight: 200;
       }
     }
   }
 
-  .promotion-card {
-    h3 {
-      text-transform: uppercase;
+  .promotion-card{
+    &__body{
+      h2{
+        text-transform: inherit;
+        &::first-letter{
+          text-transform: uppercase;
+        }
+      }
     }
-    h4{
-      font-weight: 200;
-      font-size: 0.80vw;
-      text-transform: uppercase;
-      color:$secondary;
-    }
-
   }

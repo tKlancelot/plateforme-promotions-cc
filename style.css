@@ -42,32 +42,34 @@ h2 {
   color: #161616;
 }
 
-.boutique-card__body {
+.boutique-card__body,
+.promotion-card__body,
+.single-card__body {
   color: #161616;
 }
-.boutique-card__body h3 {
-  text-transform: uppercase;
-  font-weight: 200;
-  font-size: 0.84vw;
+.boutique-card__body h2,
+.promotion-card__body h2,
+.single-card__body h2 {
+  text-transform: capitalize;
+  font-size: 0.96vw;
 }
-.boutique-card__body h6 {
+.boutique-card__body h6,
+.promotion-card__body h6,
+.single-card__body h6 {
   font-size: 0.76vw;
   font-weight: 200;
 }
 
-.promotion-card h3 {
-  text-transform: uppercase;
+.promotion-card__body h2 {
+  text-transform: inherit;
 }
-.promotion-card h4 {
-  font-weight: 200;
-  font-size: 0.8vw;
+.promotion-card__body h2::first-letter {
   text-transform: uppercase;
-  color: #b8bcbe;
 }
 
 ul li,
 li {
-  font-size: 0.84vw;
+  font-size: 0.8vw;
   list-style: none;
 }
 
@@ -104,7 +106,7 @@ hr {
 
 a {
   text-decoration: none;
-  font-size: 0.84vw;
+  font-size: 0.8vw;
   color: #161616;
 }
 
@@ -150,29 +152,46 @@ button:disabled {
   border: 1px solid rgba(184, 188, 190, 0.2823529412);
 }
 
-#store-categories {
+.pill-group {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
-#store-categories button {
-  background-color: #161616;
-  border: unset;
-  color: #fefefe;
+.pill-group button {
+  background-color: #fefefe;
+  border: 1px solid #161616;
+  color: #161616;
   padding: 0.75rem 1rem;
   border-radius: 32px;
   text-transform: uppercase;
 }
+.pill-group button:hover {
+  background-color: #161616;
+  color: #f4f4f4;
+}
 
 .boutique-card .count li {
-  background-color: #161616;
-  color: #fefefe;
-  padding: 0.5rem;
+  border: 1px solid #161616;
+  border-radius: 32px;
+  color: #161616;
+  padding: 0.4rem;
+  width: 6.4vw;
+  margin: auto;
+}
+
+#sponsored > div {
+  background-color: #e4e4e4;
+  color: #161616;
+  width: min-content;
+  padding: 0.25rem 1rem 0.5rem;
+  font-size: 0.6vw;
+  text-shadow: 0px 0px rgba(184, 188, 190, 0.2823529412);
 }
 
 p {
   color: #161616;
-  font-size: 0.88vw;
+  font-size: 0.8vw;
+  font-family: "Roboto Light";
 }
 
 .boutique-card__body p {
@@ -200,7 +219,6 @@ footer {
 .main__body .promotion-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  place-content: center;
   grid-gap: 1vw;
   padding-bottom: 1vw;
 }
@@ -218,7 +236,7 @@ footer {
 #taxo-store .main__body,
 #front-page .main__body,
 #all-offers .main__body {
-  grid-template-columns: auto auto;
+  grid-template-columns: auto 1fr;
   display: grid;
   grid-gap: 1vw;
 }
@@ -362,6 +380,12 @@ nav a {
   justify-content: space-between;
   text-align: center;
 }
+.boutique-card__body .meta,
+.promotion-card__body .meta {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
 .promotion-card,
 .single-card {
@@ -386,7 +410,7 @@ nav a {
 .promotion-card__body,
 .single-card__body {
   height: 12vw;
-  align-items: flex-start;
+  align-items: center;
   z-index: 0;
   position: relative;
 }
@@ -424,23 +448,14 @@ nav a {
   width: 16.5vw;
   height: 20vw;
 }
-.promotion-card #sponsored > div,
-.single-card #sponsored > div {
-  background-color: #e4e4e4;
-  color: #161616;
-  width: min-content;
-  padding: 0.25rem 1rem 0.5rem;
-  font-size: 0.6vw;
-  text-shadow: 0px 0px rgba(184, 188, 190, 0.2823529412);
-}
 
 .single-card__header {
   display: flex;
-  width: 16vw;
+  width: 20vw;
 }
 .single-card__header img {
-  width: 50%;
-  height: auto;
+  width: auto;
+  height: 50%;
   margin: auto;
 }
 .single-card__body {
@@ -482,8 +497,7 @@ nav a {
 }
 
 #searchform {
-  height: 2.2vw;
-  padding: 0.36rem;
+  height: auto;
 }
 #searchform > div {
   display: flex;
@@ -495,6 +509,8 @@ nav a {
   background-color: #161616;
   color: #f4f4f4;
   text-indent: 0.25rem;
+  padding: 0.5rem;
+  font-size: 0.8vw;
 }
 #searchform > div input::placeholder {
   font-family: "Roboto Italic";

@@ -25,7 +25,7 @@ get_header();
                             <?php the_post_thumbnail();?>
                         </div>
                         <div class="single-card__body">
-                            <h3><?php the_title(); ?></h3>
+                            <h2><?php the_title(); ?></h2>
                             <ul>
                                 <li>
                                     <?php 

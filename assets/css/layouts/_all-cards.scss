@@ -27,6 +27,12 @@
         align-items: center;
         justify-content: space-between;
         text-align: center;
+
+        .meta {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
     }
 
 }
@@ -53,7 +59,7 @@
 
     &__body {
         height: 12vw;
-        align-items: flex-start;
+        align-items: center;
         z-index: 0;
         position: relative;
     }
@@ -90,14 +96,7 @@
         width: 16.5vw;
         height: 20vw;
 
-        >div {
-            background-color: $border-color;
-            color: $write;
-            width: min-content;
-            padding: 0.25rem 1rem 0.5rem;
-            font-size: 0.6vw;
-            text-shadow: 0px 0px $secondary-transparent;
-        }
+
     }
 }
 
@@ -105,11 +104,11 @@
 .single-card {
     &__header {
         display: flex;
-        width: 16vw;
+        width: 20vw;
 
         img {
-            width: 50%;
-            height: auto;
+            width: auto;
+            height: 50%;
             margin: auto;
         }
     }

@@ -7,6 +7,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="description" content="site de promotions, boutiques et centres commerciaux">
   <link rel="icon" href="<?= get_template_directory_uri() . '/assets/favicon/fav.png' ?>" />
+  <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+  <script src="<?= get_template_directory_uri() .'/js/Filter.js'?>" type="module"></script>
+  <script src="<?= get_template_directory_uri() .'/js/main.js'?>" type="module" defer></script>
+
+  <?php
+    if (is_page('all-offers')) {
+    ?>
+      <script src="<?= get_template_directory_uri() .'/js/promotions.js'?>" type="module"></script>
+    <?php
+    }
+  ?>
+
   <?php 
     wp_head(); 
   ?>

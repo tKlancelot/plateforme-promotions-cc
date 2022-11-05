@@ -1,20 +1,18 @@
 #searchform {
-    height: 2.2vw;
-    padding: 0.36rem;
-
+    height: auto;
     >div {
         display: flex;
         height: 100%;
         grid-gap: 0.5rem;
-
         input {
             border: 1px solid $secondary-transparent;
             background-color: $write;
             color: $primary;
             text-indent: 0.25rem;
+            padding: 0.5rem;
+            font-size: 0.8vw;
 
             &::placeholder {
-                // color:red;
                 font-family: $font-primary-italic;
             }
         }

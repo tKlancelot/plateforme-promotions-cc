@@ -49,8 +49,6 @@
                         // echo '<li>'.$publishedToday[$i]->post_title.'</li>';
                         // echo '<span style="font-size:small">'.strtotime($publishedToday[$i]->post_date).'</span>';
                     }
-
-
                     // 604800 -> 1 semaine
                 }
                 ?>
@@ -60,34 +58,57 @@
         <!-- test de is_page  -->
         <?php
             if (is_page('all-offers')) {
-                echo 'on est sur la page all-offers';    
+                ?>
+                    <div class="aside__body__item">
+                        <h2>pourcentage de promotion</h2>
+                        <div class="pill-group">
+                            <button id="all">all</button>
+                            <!-- // lister tous les types de boutons -->
+                            <?php
+                            $promo_array = [];
+                            $loop = new WP_Query( array( 'post_type' => 'promotion') ); ?>
+                            <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+                            <?php $promo_array[] = get_field('valeur_promo');?>
+                            <?php endwhile; wp_reset_query(); // end of the loop. ?>
+                            <?php
+                            $promos_array_unique = array_unique($promo_array);
+                            foreach ($promos_array_unique as $promo_item){
+                                echo '<button id='.$promo_item.'>'.$promo_item.'</button>';
+                            }?>
+
+                        </div>
+                        <hr/>
+                    </div>
+                <?php
             }
-            elseif (is_front_page()) {?>
-                <!-- listing des catégories : taxo associée aux boutiques -->
-                <div class="aside__body__item">
-                    <h2>catégories</h2>
-                    <ul id="store-categories">  
-                    <?php
-                        $args2 = array(
-                            'taxonomy' => 'store',
-                            'orderby' => 'name', // term_id
-                            "order" => "ASC",
-                            'hide_empty' => 0,
-                            'fields' => 'all',
-                            'exclude' => 1,
-                            'title_li'=>'',
-                            'show_count'=> 1
-                        );
-                        $cats = get_categories( $args2 );
-                    ?>
-                    <?php
-                        foreach($cats as $category) {
-                            echo '<button id='.$category->slug.'>'.$category->name.'</button>';
-                        }
-                    ?>
-                    </ul>
-                </div>
-                <hr/><?php
+            elseif (is_front_page()) {
+                ?>
+                    <!-- listing des catégories : taxo associée aux boutiques -->
+                    <div class="aside__body__item">
+                        <h2>catégories</h2>
+                        <div id="store-categories" class="pill-group">  
+                        <?php
+                            $args2 = array(
+                                'taxonomy' => 'store',
+                                'orderby' => 'name', // term_id
+                                "order" => "ASC",
+                                'hide_empty' => 0,
+                                'fields' => 'all',
+                                'exclude' => 1,
+                                'title_li'=>'',
+                                'show_count'=> 1
+                            );
+                            $cats = get_categories( $args2 );
+                        ?>
+                        <?php
+                            foreach($cats as $category) {
+                                echo '<button id='.$category->slug.'>'.$category->name.'</button>';
+                            }
+                        ?>
+                        </div>
+                        <hr/>
+                    </div>
+                <?php
             }
         ?>
 
