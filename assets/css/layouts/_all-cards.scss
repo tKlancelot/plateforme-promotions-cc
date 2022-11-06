@@ -1,11 +1,15 @@
 .boutique-card,
 .promotion-card {
-    border: 1px solid $border-color;
+    border: 1px solid $primary;
     background-color: $primary-light;
     margin: auto 0;
     height: auto;
     transition: 0.1s ease-in;
-    @include card-shadow;
+
+    &:hover {
+        @include card-shadow;
+        border: 1px solid $border-color;
+    }
 
     &__header {
         @include flex-center-center;
@@ -39,9 +43,14 @@
 
 .promotion-card,
 .single-card {
-    border: 1px solid $border-color;
+    border: 1px solid $primary;
     background-color: $primary-light;
     height: auto;
+
+    &:hover {
+        @include card-shadow;
+        border: 1px solid $border-color;
+    }
 
     &__header {
         height: 8vw;

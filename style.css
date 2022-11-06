@@ -67,6 +67,10 @@ h2 {
   text-transform: uppercase;
 }
 
+.main__header h4 {
+  font-weight: normal;
+}
+
 ul li,
 li, tr, td {
   font-size: 0.8vw;
@@ -121,6 +125,7 @@ button {
   height: 2rem;
   background-color: #161616;
   border: 1px solid rgba(22, 22, 22, 0.5019607843);
+  border-radius: 32px;
   color: #fefefe;
   text-transform: uppercase;
 }
@@ -185,7 +190,7 @@ button:disabled {
   background-color: #e4e4e4;
   color: #161616;
   width: min-content;
-  padding: 0.25rem 1rem 0.5rem;
+  padding: 0.25rem 0.5rem 0.5rem;
   font-size: 0.6vw;
   text-shadow: 0px 0px rgba(184, 188, 190, 0.2823529412);
 }
@@ -355,12 +360,16 @@ nav a {
 
 .boutique-card,
 .promotion-card {
-  border: 1px solid #e4e4e4;
+  border: 1px solid #f4f4f4;
   background-color: #fefefe;
   margin: auto 0;
   height: auto;
   transition: 0.1s ease-in;
+}
+.boutique-card:hover,
+.promotion-card:hover {
   box-shadow: 1px 1px 0px 0px #f4f4f4, -1px -1px 0px 0px #f4f4f4;
+  border: 1px solid #e4e4e4;
 }
 .boutique-card__header,
 .promotion-card__header {
@@ -395,9 +404,14 @@ nav a {
 
 .promotion-card,
 .single-card {
-  border: 1px solid #e4e4e4;
+  border: 1px solid #f4f4f4;
   background-color: #fefefe;
   height: auto;
+}
+.promotion-card:hover,
+.single-card:hover {
+  box-shadow: 1px 1px 0px 0px #f4f4f4, -1px -1px 0px 0px #f4f4f4;
+  border: 1px solid #e4e4e4;
 }
 .promotion-card__header,
 .single-card__header {

@@ -31,7 +31,7 @@ get_header();
                                 <li>
                                     <?php 
                                         foreach($terms as $term){
-                                            echo '<span style="color:mediumblue;font-weight:bolder">'.$term->name.'&nbsp;</span>';
+                                            echo '<span style="color:mediumblue;">'.$term->name.'&nbsp;</span>';
                                         }
                                     ?>
                                 </li>
