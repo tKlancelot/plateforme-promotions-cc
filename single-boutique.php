@@ -18,7 +18,7 @@ get_header();
                     <?php
                         $phoneNumber = get_post_meta(get_the_ID(),PhoneNumber::META_KEY,true);
                         $terms = get_the_terms(get_the_id(),'store');
-                        $days = ['lundi','mardi','mercredi','jeudi','vendredi','samedi','dimanche'];
+                        $days = ['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimanche'];
                     ?>
 
                     <div class="single-card">
@@ -44,43 +44,48 @@ get_header();
                 </div>
                 <div class="boutique-content__body__right">
                     <div class="description">
-                        <?php the_content();?>
+                        <p><?php the_content();?></p>
                     </div>
                     <div class="schedule">
-                        <!-- <p>horaires lundi</p> -->
+                        <table>
+
                         <?php for ($i = 0; $i < count(Horaires::DAYS_INFO);$i++){
                             ?>
-                            <p><?php echo $days[$i];?></p>
-                            <ul>
-                                <?php 
-                                    if($i == 6){
-                                        if(get_post_meta(get_the_ID(),Horaires::DAYS_INFO[$i]['meta_key_open'],true) || get_post_meta(get_the_ID(),Horaires::DAYS_INFO[$i]['meta_key_close'],true)){?>
-                                            <li>de <?php echo get_post_meta(get_the_ID(),Horaires::DAYS_INFO[$i]['meta_key_open'],true); ?></li>
-                                            <li>à  <?php echo get_post_meta(get_the_ID(),Horaires::DAYS_INFO[$i]['meta_key_close'],true);?></li>
+                            <tr>
+                                <td><?php echo $days[$i];?></td>
+                                <td>
+                                    <?php 
+                                        if($i == 6){
+                                            if(get_post_meta(get_the_ID(),Horaires::DAYS_INFO[$i]['meta_key_open'],true) || get_post_meta(get_the_ID(),Horaires::DAYS_INFO[$i]['meta_key_close'],true)){?>
+                                                <span>De <?php echo get_post_meta(get_the_ID(),Horaires::DAYS_INFO[$i]['meta_key_open'],true); ?></span>
+                                                <span>à  <?php echo get_post_meta(get_the_ID(),Horaires::DAYS_INFO[$i]['meta_key_close'],true);?></span>
+                                            <?php
+                                            } else {
+                                                echo '<span>fermé</span>';
+                                            }
+                                        ?>
                                         <?php
-                                        } else {
-                                            echo 'fermé';
+                                        } else {?>
+                                            <span>De 
+                                                <?php 
+                                                    echo get_post_meta(get_the_ID(),Horaires::DAYS_INFO[$i]['meta_key_open'],true) ?  get_post_meta(get_the_ID(),Horaires::DAYS_INFO[$i]['meta_key_open'],true) : '8h00'; 
+                                                ?>
+                                            </span>
+                                            <span>à 
+                                                <?php 
+                                                    echo get_post_meta(get_the_ID(),Horaires::DAYS_INFO[$i]['meta_key_close'],true) ?  get_post_meta(get_the_ID(),Horaires::DAYS_INFO[$i]['meta_key_close'],true) : '18h00'; 
+                                                ?>
+                                            </span>
+                                        <?php
                                         }
                                     ?>
-                                    <?php
-                                    } else {?>
-                                        <li>de 
-                                            <?php 
-                                                echo get_post_meta(get_the_ID(),Horaires::DAYS_INFO[$i]['meta_key_open'],true) ?  get_post_meta(get_the_ID(),Horaires::DAYS_INFO[$i]['meta_key_open'],true) : '8h00'; 
-                                            ?>
-                                        </li>
-                                        <li>à 
-                                            <?php 
-                                                echo get_post_meta(get_the_ID(),Horaires::DAYS_INFO[$i]['meta_key_close'],true) ?  get_post_meta(get_the_ID(),Horaires::DAYS_INFO[$i]['meta_key_close'],true) : '18h00'; 
-                                            ?>
-                                        </li>
-                                    <?php
-                                    }
-                                ?>
-                            </ul>
+                                </td>
+                            </tr>
                             <?php
                             }
                         ?>
+
+                        </table>
                     </div>
                 </div>
             </div>
